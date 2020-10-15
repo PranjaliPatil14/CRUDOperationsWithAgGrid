@@ -1,0 +1,59 @@
+@import url("https://unpkg.com/@ag-grid-community/all-modules@23.0.0/dist/styles/ag-grid.css");
+
+@import url("https://unpkg.com/@ag-grid-community/all-modules@23.0.0/dist/styles/ag-theme-alpine.css");
+
+:root {
+--new-row: #e8e8fa;
+}
+
+h1, p {
+  font-family: Lato;
+}
+
+.ag-input-wrapper {
+  line-height: 32px;
+}
+
+.ag-cell-edit-input {
+ width: 100%;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+.add-post {
+  padding: 8px 32px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #dcdbdc;
+  cursor: pointer;
+}
+
+.add-post :focus{
+  outline: blue;
+  color: blue;
+}
+
+.delete-post, .bookmark-post {
+  border: 0px;
+}
+
+.highlight-row.ag-row{
+  background: var(--new-row);
+}
+
+.info {
+  height: 20px;
+  width: 20px;
+  background: var(--new-row);
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.grid-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
