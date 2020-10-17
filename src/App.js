@@ -3,6 +3,7 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community";
 import DeletePost from "./DeletePost";
 import BookMarkPost from "./BookMarkPost";
+import { filterParams } from "./helper";
 import "./style.css";
 
 export default function App() {
@@ -12,39 +13,62 @@ export default function App() {
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts", { mode: "cors" })
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .then(jsonResponse => {
+      .then((jsonResponse) => {
         setRowData(jsonResponse);
       });
   }, []);
 
-  const onGridReady = params => {
+  const onGridReady = (params) => {
     gridApi.current = params;
   };
 
-  const onModelUpdated = params => {
+  const onModelUpdated = (params) => {
     setRowCount(params.api.rowModel.rowsToDisplay.length);
   };
 
   const onAddPost = () => {
     gridApi.current.api.applyTransaction({
-      add: [{ title: "Please Enter Post Title...", body: "Please Enter Post Content...", newRow: true }],
-      addIndex: 0
+      add: [
+        {
+          title: "Please Enter Post Title...",
+          body: "Please Enter Post Content...",
+          date: new Date(),
+          newRow: true,
+        },
+      ],
+      addIndex: 0,
     });
   };
 
   const columnData = [
     {
+      headerName: "Date",
+      field: "date",
+      valueGetter: (params) => {
+        const date = new Date();
+        if (params.data.date) {
+          return params.data.date.toLocaleDateString();
+        }
+        date.setDate(params.data.id);
+        return date.toLocaleDateString();
+      },
+      filter: "agDateColumnFilter",
+      editable: false,
+      minWidth: 80,
+      filterParams,
+    },
+    {
       headerName: "Post Title",
       field: "title",
       cellClass: "bold-text",
-      minWidth: 350
+      minWidth: 350,
     },
     {
       headerName: "Post Content",
-      field: "body"
+      field: "body",
     },
     {
       headerName: "BookMark",
@@ -61,27 +85,29 @@ export default function App() {
       editable: false,
       sortable: false,
       filter: false,
-      width: 70
-    }
+      width: 70,
+    },
   ];
   const defaultConfigs = {
     sortable: true,
     filter: true,
     resizable: true,
-    editable: true
+    editable: true,
   };
 
   return (
     <div className="page">
-    <div className="grid-info">
-      <button className="add-post" type="submit" onClick={onAddPost}>
-        Add Post
-      </button>
-        <div><div className="info" /> : Newely Added Posts</div>
+      <div className="grid-info">
+        <button className="add-post" type="submit" onClick={onAddPost}>
+          Add Post
+        </button>
+        <div>
+          <div className="info" /> : Newely Added Posts
+        </div>
         <p className="row-count">
           Total No of Posts: <strong>{rowCount}</strong>
         </p>
-        </div>
+      </div>
       <div
         style={{ height: "90vh", width: "100%" }}
         className="ag-theme-alpine"
@@ -94,7 +120,7 @@ export default function App() {
           singleClickEdit
           onModelUpdated={onModelUpdated}
           rowClassRules={{
-            "highlight-row": params => params.data.newRow
+            "highlight-row": (params) => params.data.newRow,
           }}
         />
       </div>
