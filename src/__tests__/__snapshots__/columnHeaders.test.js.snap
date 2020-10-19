@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`columnHeaders should return all columns 1`] = `
+Array [
+  Object {
+    "editable": false,
+    "field": "date",
+    "filter": "agDateColumnFilter",
+    "filterParams": Object {
+      "clearButton": true,
+      "comparator": [Function],
+    },
+    "headerName": "Date",
+    "minWidth": 80,
+    "valueGetter": [Function],
+  },
+  Object {
+    "cellClass": "bold-text",
+    "field": "title",
+    "headerName": "Post Title",
+    "minWidth": 350,
+  },
+  Object {
+    "field": "body",
+    "headerName": "Post Content",
+  },
+  Object {
+    "cellRendererFramework": [Function],
+    "editable": false,
+    "field": "bookMark",
+    "filter": false,
+    "headerName": "BookMark",
+    "minWidth": 100,
+    "sort": "desc",
+  },
+  Object {
+    "cellRendererFramework": [Function],
+    "editable": false,
+    "filter": false,
+    "headerName": "",
+    "sortable": false,
+    "width": 70,
+  },
+]
+`;

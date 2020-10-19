@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community";
-import DeletePost from "./DeletePost";
-import BookMarkPost from "./BookMarkPost";
-import { filterParams } from "./helper";
+import columnData from "./columnHeaders";
 import "./style.css";
 
 export default function App() {
@@ -43,51 +41,6 @@ export default function App() {
     });
   };
 
-  const columnData = [
-    {
-      headerName: "Date",
-      field: "date",
-      valueGetter: (params) => {
-        const date = new Date();
-        if (params.data.date) {
-          return params.data.date.toLocaleDateString();
-        }
-        date.setDate(params.data.id);
-        return date.toLocaleDateString();
-      },
-      filter: "agDateColumnFilter",
-      editable: false,
-      minWidth: 80,
-      filterParams,
-    },
-    {
-      headerName: "Post Title",
-      field: "title",
-      cellClass: "bold-text",
-      minWidth: 350,
-    },
-    {
-      headerName: "Post Content",
-      field: "body",
-    },
-    {
-      headerName: "BookMark",
-      field: "bookMark",
-      cellRendererFramework: BookMarkPost,
-      editable: false,
-      sort: "desc",
-      filter: false,
-      minWidth: 100,
-    },
-    {
-      headerName: "",
-      cellRendererFramework: DeletePost,
-      editable: false,
-      sortable: false,
-      filter: false,
-      width: 70,
-    },
-  ];
   const defaultConfigs = {
     sortable: true,
     filter: true,

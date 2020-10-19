@@ -5,8 +5,10 @@
   "dependencies": {
     "ag-grid-community": "latest",
     "ag-grid-react": "latest",
+    "jest": "24.9.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-testing-library": "^8.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
