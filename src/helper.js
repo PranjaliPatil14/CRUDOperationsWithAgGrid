@@ -1,5 +1,5 @@
 export const filterParams = {
-  comparator: (filterLocalDateAtMidnight, cellValue) => {
+  comparator: (filterDateCondition, cellValue) => {
     var dateAsString = cellValue;
 
     if (dateAsString == null) {
@@ -10,9 +10,9 @@ export const filterParams = {
     var month = Number(dateParts[0]) - 1;
     var year = Number(dateParts[2]);
     var cellDate = new Date(year, month, day);
-    if (cellDate < filterLocalDateAtMidnight) {
+    if (cellDate < filterDateCondition) {
       return -1;
-    } else if (cellDate > filterLocalDateAtMidnight) {
+    } else if (cellDate > filterDateCondition) {
       return 1;
     } else {
       return 0;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render Add Post button, post count and grid with data 1`] = `
+<div
+  class="grid-info"
+>
+  <button
+    class="add-post"
+    type="submit"
+  >
+    Add Post
+  </button>
+  <div>
+    <div
+      class="info"
+    />
+     : Newely Added Posts
+  </div>
+  <p
+    class="row-count"
+  >
+    Total No of Posts: 
+    <strong>
+      5
+    </strong>
+  </p>
+</div>
+`;

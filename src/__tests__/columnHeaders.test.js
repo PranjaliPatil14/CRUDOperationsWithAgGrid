@@ -1,5 +1,6 @@
 import BookMarkPost from "../BookMarkPost";
 import columnData from "../columnHeaders";
+import CustomInputEditor from "../CustomInputEditor";
 import DeletePost from "../DeletePost";
 
 describe("columnHeaders", () => {
@@ -37,5 +38,9 @@ describe("columnHeaders", () => {
 
   test("should return Cell renderer framework for delete column", () => {
     expect(columnData[4].cellRendererFramework).toEqual(DeletePost);
+  });
+
+  test("should return Cell editor framework for post title column", () => {
+    expect(columnData[1].cellEditorFramework).toEqual(CustomInputEditor);
   });
 });

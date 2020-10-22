@@ -4,7 +4,7 @@ import "ag-grid-community";
 import columnData from "./columnHeaders";
 import "./style.css";
 
-export default function App() {
+export default function App({ suppressColumnVirtualisation }) {
   const [rowData, setRowData] = useState([]);
   const [rowCount, setRowCount] = useState(null);
   const gridApi = useRef(null);
@@ -75,6 +75,8 @@ export default function App() {
           rowClassRules={{
             "highlight-row": (params) => params.data.newRow,
           }}
+          suppressColumnVirtualisation={suppressColumnVirtualisation}
+          onCellEditingStopped={() => console.log("cell editing stopped")}
         />
       </div>
     </div>

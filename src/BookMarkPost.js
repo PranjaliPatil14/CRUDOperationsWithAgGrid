@@ -2,8 +2,8 @@ import React from "react";
 
 const BookMarkPost = ({ api, data, node }) => {
   const markBookMark = () => {
-    data.bookMark = !data.bookMark
-    api.applyTransaction({update: [data]})
+    data.bookMark = !data.bookMark;
+    api.applyTransaction({ update: [data] });
     api.refreshCells({ rowNodes: [node], force: true });
   };
   return (
@@ -12,8 +12,6 @@ const BookMarkPost = ({ api, data, node }) => {
         width="24"
         height="24"
         xmlns="http://www.w3.org/2000/svg"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
         style={{ fill: "#3b4252" }}
       >
         {data.bookMark ? (

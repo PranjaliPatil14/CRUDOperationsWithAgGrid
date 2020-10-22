@@ -5,18 +5,20 @@
   "dependencies": {
     "ag-grid-community": "latest",
     "ag-grid-react": "latest",
-    "jest": "24.9.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-testing-library": "^8.0.1"
+    "react-dom": "^16.13.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom-fourteen",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "jest": "24.9.0",
+    "jest-environment-jsdom-fourteen": "^1.0.1",
     "react-scripts": "latest"
   },
   "browserslist": {

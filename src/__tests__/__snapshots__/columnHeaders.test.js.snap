@@ -16,6 +16,10 @@ Array [
   },
   Object {
     "cellClass": "bold-text",
+    "cellEditorFramework": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    },
     "field": "title",
     "headerName": "Post Title",
     "minWidth": 350,

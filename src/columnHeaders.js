@@ -1,6 +1,7 @@
 import BookMarkPost from "./BookMarkPost";
 import DeletePost from "./DeletePost";
 import { filterParams } from "./helper";
+import CustomInputEditor from "./CustomInputEditor";
 
 const columnData = [
   {
@@ -23,6 +24,7 @@ const columnData = [
     headerName: "Post Title",
     field: "title",
     cellClass: "bold-text",
+    cellEditorFramework: CustomInputEditor,
     minWidth: 350,
   },
   {
