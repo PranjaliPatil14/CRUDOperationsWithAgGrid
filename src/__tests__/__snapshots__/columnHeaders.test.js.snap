@@ -11,7 +11,8 @@ Array [
       "comparator": [Function],
     },
     "headerName": "Date",
-    "minWidth": 80,
+    "maxWidth": 120,
+    "minWidth": 30,
     "valueGetter": [Function],
   },
   Object {
@@ -22,11 +23,7 @@ Array [
     },
     "field": "title",
     "headerName": "Post Title",
-    "minWidth": 350,
-  },
-  Object {
-    "field": "body",
-    "headerName": "Post Content",
+    "minWidth": 150,
   },
   Object {
     "cellRendererFramework": [Function],
@@ -34,7 +31,7 @@ Array [
     "field": "bookMark",
     "filter": false,
     "headerName": "BookMark",
-    "minWidth": 100,
+    "maxWidth": 150,
     "sort": "desc",
   },
   Object {
@@ -44,6 +41,10 @@ Array [
     "headerName": "",
     "sortable": false,
     "width": 70,
+  },
+  Object {
+    "field": "body",
+    "headerName": "Post Content",
   },
 ]
 `;

@@ -17,7 +17,8 @@ const columnData = [
     },
     filter: "agDateColumnFilter",
     editable: false,
-    minWidth: 80,
+    minWidth: 30,
+    maxWidth: 120,
     filterParams,
   },
   {
@@ -25,11 +26,7 @@ const columnData = [
     field: "title",
     cellClass: "bold-text",
     cellEditorFramework: CustomInputEditor,
-    minWidth: 350,
-  },
-  {
-    headerName: "Post Content",
-    field: "body",
+    minWidth: 150,
   },
   {
     headerName: "BookMark",
@@ -38,7 +35,7 @@ const columnData = [
     editable: false,
     sort: "desc",
     filter: false,
-    minWidth: 100,
+    maxWidth: 150,
   },
   {
     headerName: "",
@@ -47,6 +44,10 @@ const columnData = [
     sortable: false,
     filter: false,
     width: 70,
+  },
+  {
+    headerName: "Post Content",
+    field: "body",
   },
 ];
 
