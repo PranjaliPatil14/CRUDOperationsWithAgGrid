@@ -1,3 +1,3 @@
 # CRUD Operations With AgGrid
 
-This covers client side Crate, Read, Update, Delete operations on react data grid with AgGrid library.
+This covers client side Crate, Read, Update, Delete operations on react data grid using AgGrid library.
